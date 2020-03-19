@@ -40,7 +40,8 @@ cat ${HTMLDUMP}.tmp | sed 's/<td[^>]*>/<td>/g' | sed 's/<th[^>]*>/<th>/g' | sed 
 rm ${HTMLDUMP}.tmp
 cat ${HTMLDUMP}.tmpx | sed 's/<!--/\n<!--/g' | sed 's/-->/-->\n/g' | grep -v '<!--' | sed ':a;N;$!ba;s/\n/ /g' | sed 's/<tr/\n<tr/g' | sed 's/ </</g' | sed 's/> />/g' >> ${HTMLDUMP}.tmp
 rm ${HTMLDUMP}.tmpx
-mv ${HTMLDUMP}.tmp ${HTMLDUMP}
+cat ${HTMLDUMP}.tmp | sed 's/<td>  */<td>/g' | sed 's/<td><\/td>/<td>-<\/td>/g' >> ${HTMLDUMP}.tmpx
+mv ${HTMLDUMP}.tmpx ${HTMLDUMP}
 ########################
 
 TC=$(cat ${HTMLDUMP} | grep -Po '<td>\K.*?(?=<\/td>)' | head -2 | tail -1)
