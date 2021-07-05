@@ -4,7 +4,7 @@
 
 COUNTRY="" # Example: Indonesia (Worldometers format)
 TELEGRAM_API_KEY="1761207012:AAEClxbLuR38_dcZtsGs3tk7wKAmqiIwe5E"
-TELEGRAM_CHAT_ID="@user00000000"
+TELEGRAM_CHAT_ID="@ambisptnID_bot"
 
 CURRENTDIR="$(cd "$(dirname "$0")"; pwd)"
 LASTUPDATEFILE="${CURRENTDIR}/.worldometers-corona.log"
