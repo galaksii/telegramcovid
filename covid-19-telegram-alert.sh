@@ -3,7 +3,7 @@
 # By https://github.com/panophan/Worldometers-COVID-19-Telegram-Alert/
 
 COUNTRY="" # Example: Indonesia (Worldometers format)
-TELEGRAM_API_KEY="ZKDIHA-QLTLPP-AAXUFH-WPNXKK-ARQ"
+TELEGRAM_API_KEY="1761207012:AAEClxbLuR38_dcZtsGs3tk7wKAmqiIwe5E"
 TELEGRAM_CHAT_ID="@user00000000"
 
 CURRENTDIR="$(cd "$(dirname "$0")"; pwd)"
@@ -25,7 +25,7 @@ function sendTelegram() {
 	echo ""
 	urldata=$(python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])" "$(cat ${CURRENTDIR}/worldometers-data.tmp)")
 	rm ${CURRENTDIR}/worldometers-data.tmp
-	curl -s "https://api.telegram.org/bot${ZKDIHA-QLTLPP-AAXUFH-WPNXKK-ARQ}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode=Markdown&text=${urldata}"
+	curl -s "https://api.telegram.org/bot${1761207012:AAEClxbLuR38_dcZtsGs3tk7wKAmqiIwe5E}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode=Markdown&text=${urldata}"
 }
 
 HTMLDUMP="/tmp/wom-coronavirus.html"
